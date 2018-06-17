@@ -13,6 +13,9 @@ var app = express();
 // express router
 var router = express.Router();
 
+// require routes file to pass our router object
+require("./config/routes")(router);
+
 // designates public folder as the static directory
 app.use(express.static(__dirname + "/public"));
 
@@ -33,11 +36,6 @@ app.use(router);
 // use the deployed database if deployed to Heroku
 var db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
-
 // connect mongoose to the database
 mongoose.connect(db, function(error) {
     // state what the error is if there is one
@@ -49,6 +47,11 @@ mongoose.connect(db, function(error) {
         console.log("Mongoose successfully connected");
     }
 });
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 // listen on port and show confirmation of port
 app.listen(PORT, function() {
