@@ -154,6 +154,4 @@ function handleNoteDelete() {
     }).then(function() {
         bootbox.hideAll();
     });
-}
-
-});
+};
