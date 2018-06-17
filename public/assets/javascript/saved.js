@@ -119,7 +119,7 @@ function handleArticleNotes() {
             "<button class='btn btn-success save'>Save Note</button>",
             "</div>"
         ].join("");
-        bootbox.dialong({
+        bootbox.dialog({
             message: modelText,
             closeButton: true
         });
