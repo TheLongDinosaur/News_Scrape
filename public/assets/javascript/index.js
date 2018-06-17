@@ -54,17 +54,17 @@ $(document).ready(function() {
 function renderEmpty() {
     var emptyAlert =
     $(["<div class='alert alert-warning text-center'>",
-    "<h4>Uh oh!  Looks like there aren't any new articles.<h4>",
-    "</div>",
-    "<div class='panel panel-default'>",
-    "<div class='panel-heading text-center'>",
-    "<h3>What would you like to do?<h3>",
-    "</div>",
-    "<div class='panel-body text-center'>",
-    "<h4><a class='scrape-new'>Try scraping new articles</a></h4>",
-    "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
-    "</div>",
-    "</div>"
+      "<h4>Uh oh!  There aren't any new articles.<h4>",
+      "</div>",
+      "<div class='panel panel-default'>",
+      "<div class='panel-heading text-center'>",
+      "<h3>What would you like to do?<h3>",
+      "</div>",
+      "<div class='panel-body text-center'>",
+      "<h4><a class='scrape-new'>Try scraping new articles</a></h4>",
+      "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
+      "</div>",
+      "</div>"
   ].join(""));
   articleContainer.append(emptyAlert);
 }
